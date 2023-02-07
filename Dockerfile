@@ -28,8 +28,8 @@ RUN npm install --omit=dev && npm cache clean --force
 COPY --from=builder /work/out ./out
 
 # htmlをコピー
-RUN mkdir -p /work/out/html
-COPY ./src/html /work/out/html
+RUN mkdir -p /work/out/public
+COPY ./src/public /work/out/public
 
 # Node.js アプリを起動
 CMD ["node", "./out/index.js"]
